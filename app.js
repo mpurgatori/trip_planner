@@ -26,6 +26,11 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
+//app.use(express.static('/bootstrap','bower_components'));
+
+app.use('/bootstrap', express.static('bower_components/bootstrap/dist'));
+app.use('/jquery', express.static('bower_components/jquery/dist'));
+
 app.use('/', tplanRouter);
 
 // app.use('/', tplanRouter)

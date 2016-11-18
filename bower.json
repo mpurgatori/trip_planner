@@ -1,0 +1,17 @@
+{
+  "name": "trip_planner",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Mike Purgatori <mpurgatori@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mpurgatori/trip_planner",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
