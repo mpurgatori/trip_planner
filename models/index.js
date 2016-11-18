@@ -30,6 +30,7 @@ var placeSchema = {
     },
 };
 
+var Place = mapdb.define('place', placeSchema)
 
 var hotelSchema = {
     name: {
@@ -49,6 +50,7 @@ var hotelSchema = {
     },
 }
 
+var Hotel = mapdb.define('hotel', hotelSchema)
 
 
 var activitySchema = {
@@ -62,20 +64,37 @@ var activitySchema = {
     }
 };
 
+var Activity = mapdb.define('activity', activitySchema)
+
 var restaurantSchema = {
-  name: {
-      type: Sequelize.STRING,
-      allowNull: false
-  },
-  cuisine: {
-      type: Sequelize.STRING,
-      allowNull: false
-  },
-  price: {
-      type: Sequelize.INTEGER,
-      validate: {
-          min: 1,
-          max: 5
-      }
-  }
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    cuisine: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    price: {
+        type: Sequelize.INTEGER,
+        validate: {
+            min: 1,
+            max: 5
+        }
+    }
+}
+var Restaurant = mapdb.define('restaurant', restaurantSchema)
+
+
+Hotel.belongsTo(Place)
+Restaurant.belongsTo(Place)
+Activity.belongsTo(Place)
+
+module.exports = {
+    Place: Place,
+    Hotel: Hotel,
+    Activity: Activity,
+    Restaurant: Restaurant,
+    mapdb: mapdb
+
 }
