@@ -3,7 +3,7 @@ var app = express();
 var volleyball = require('volleyball');
 var nunjucks = require('nunjucks');
 var bodyParser = require('body-parser');
-var tplanRouter = require('./routes/tripPlanner').router;
+var tplanRouter = require('./routes/tripPlanner');
 var Place = require('./models').Place;
 var Hotels = require('./models').Hotels;
 var Activity = require('./models').Activity;
@@ -31,7 +31,6 @@ app.use('/', tplanRouter);
 // app.use('/', tplanRouter)
 
 
-
 // app.use(function(err, req, res, next) {
 //     console.log(err);
 //     res.status(err.status || 500).send(err.message)
@@ -48,11 +47,12 @@ app.use('/', tplanRouter);
 //
 // })
 //
-// module.exports = app;
+
 
 app.use(function(err,req,res,next){
   console.error(err);
   res.status(500).send(err.message);
+
 });
 
 
@@ -62,3 +62,5 @@ mapdb.sync()
             console.log('Listening to port 3000');
         });
     });
+
+    module.exports = app;
