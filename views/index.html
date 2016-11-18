@@ -12,6 +12,26 @@
   <![endif]-->
 </head>
 <body>
+  <div id='places'>
+    <select id='restaurants'>
+      <option value="Placeholder">Restaurants</option>
+      {% for restaurants in restaurants %}
+      <option value={{restaurants.name}}>{{restaurants.name}}</option>
+      {% endfor %}
+    </select>
+    <select id='hotels'>
+      <option value="Placeholder">Hotels</option>
+      {% for hotels in hotels %}
+      <option value={{hotels.name}}>{{hotels.name}}</option>
+      {% endfor %}
+    </select>
+    <select id='activities'>
+      <option value="Placeholder">Activities</option>
+      {% for activities in activities %}
+      <option value={{activities.name}}>{{activities.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
 
 </body>
 </html>

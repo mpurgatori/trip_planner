@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
       var activities = values[1];
       var restaurants = values[2];
 
-      res.json({
+      res.render('index',{
         hotels: hotels,
         activities: activities,
         restaurants: restaurants
